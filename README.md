@@ -6,7 +6,7 @@ HOW TO RUN
 1. Run Anaconda Prompt AS ADMINISTRATOR
 2. Activate env with 'conda activate yourenv'
 3. change directory to project root by 'cd C:\coding\kep python\nlp_sampah'
-4. Run server with 'uvicorn main:app --reload'
+4. Run server with 'uvicorn main:app --reload' or 'uvicorn main:app --host 0.0.0.0 --port 8000 --reload' for usb devices
 5. Wait till server completed and shows log as:
 (yoloenv) C:\Windows\System32>cd C:\coding\kep python\nlp_sampah
 
