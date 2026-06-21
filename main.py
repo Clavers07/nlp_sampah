@@ -18,16 +18,71 @@ app.add_middleware(
 
 chatbot_pipeline = pipeline("text-generation", model="microsoft/DialoGPT-medium")
 FAQ_DATA = {
-    "Apa itu Bank Sampah Sungailiat?": "Bank Sampah Sungailiat adalah program pengelolaan sampah berbasis masyarakat di Sungailiat, Bangka Belitung, yang bertujuan mengurangi sampah melalui daur ulang dan memberikan nilai ekonomis bagi nasabah.",
-    "Bagaimana cara menjadi nasabah Bank Sampah Sungailiat?": "Anda dapat mendaftar sebagai nasabah dengan mengunjungi kantor Bank Sampah Sungailiat di Sungailiat, membawa KTP, dan mengisi formulir pendaftaran. Setelah itu, Anda bisa menyetor sampah yang sudah dipilah.",
-    "Apa saja layanan Bank Sampah Sungailiat?": "Layanan Bank Sampah Sungailiat meliputi pengumpulan sampah terpilah (plastik, kertas, logam), penimbangan sampah, pencatatan tabungan sampah, serta edukasi tentang pengelolaan sampah dan daur ulang."
+   "Apa itu sistem deteksi jalan berlubang?":
+        "Sistem deteksi jalan berlubang adalah aplikasi yang menggunakan teknologi kecerdasan buatan dan pengolahan citra untuk mendeteksi keberadaan lubang pada permukaan jalan.",
+
+    "Bagaimana cara kerja sistem ini?":
+        "Sistem bekerja dengan menganalisis gambar atau video jalan menggunakan model deep learning untuk mengidentifikasi dan menandai lokasi jalan berlubang.",
+
+    "Apa manfaat sistem deteksi jalan berlubang?":
+        "Sistem membantu pemerintah dan masyarakat dalam mengidentifikasi kerusakan jalan lebih cepat sehingga dapat dilakukan perbaikan sebelum menyebabkan kecelakaan.",
+
+    "Apakah sistem dapat mendeteksi secara real-time?":
+        "Ya, jika diintegrasikan dengan kamera atau CCTV, sistem dapat melakukan deteksi jalan berlubang secara real-time.",
+
+    "Bagaimana cara melaporkan jalan berlubang?":
+        "Pengguna dapat mengunggah foto jalan yang rusak melalui aplikasi, kemudian sistem akan menganalisis dan menyimpan hasil deteksi.",
+
+    "Apa tingkat akurasi sistem?":
+        "Tingkat akurasi bergantung pada model yang digunakan, kualitas data pelatihan, dan kondisi gambar yang dianalisis."
 }
 
 # Keyword mappings for common terms
 KEYWORD_SYNONYMS = {
-    "cara": ["bagaimana", "gimana", "cara"],
-    "akses": ["mengakses", "akses", "buka", "dapatkan"],
-    "data": ["data", "informasi", "sampah"]
+    "jalan": [
+        "jalan",
+        "ruas jalan",
+        "aspal",
+        "jalan raya"
+    ],
+
+    "lubang": [
+        "lubang",
+        "jalan berlubang",
+        "kerusakan jalan",
+        "retak",
+        "pothole"
+    ],
+
+    "deteksi": [
+        "deteksi",
+        "mendeteksi",
+        "identifikasi",
+        "analisis",
+        "pengenalan"
+    ],
+
+    "lapor": [
+        "lapor",
+        "melaporkan",
+        "pengaduan",
+        "laporan"
+    ],
+
+    "akurasi": [
+        "akurasi",
+        "ketepatan",
+        "precision",
+        "hasil"
+    ],
+
+    "kamera": [
+        "kamera",
+        "cctv",
+        "video",
+        "gambar",
+        "foto"
+    ]
 }
 
 class UserInput(BaseModel):
